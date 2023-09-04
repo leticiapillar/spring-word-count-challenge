@@ -1,7 +1,6 @@
 package com.challenge.wordcount.models;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -16,8 +15,6 @@ import lombok.ToString;
 @ToString
 public class TextModel {
 
-//    @NotNull(message = "Text may not be null")
-//    @NotEmpty(message = "Text may not be empty")
-    @NotBlank(message = "Text may not be blank")
+    @NotBlank(message = "{NotBlank.TextModel.Text}")
     private String text;
 }

@@ -24,19 +24,15 @@ public class WordCountController {
     private final WordCountService wordCountService;
 
     @GetMapping()
-    public String showForm(Model model) {
+    public String showWordCountForm(TextModel textModel) {
         log.debug("Show word count form ...");
-        model.addAttribute("textmodel", new TextModel());
         return "word-count-form";
     }
 
     @PostMapping()
     public String wordCount(@Valid TextModel textModel, BindingResult result, Model model) {
         log.debug("Submit word count form ...");
-        log.debug("TextModel text: {}", textModel.getText());
-        log.debug("result.hasErrors(): {}", result.hasErrors());
         if (result.hasErrors()) {
-            model.addAttribute("textmodel", new TextModel());
             return "word-count-form";
         }
 
