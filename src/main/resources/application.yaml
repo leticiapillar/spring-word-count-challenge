@@ -1,5 +1,3 @@
 logging:
   level:
-    com:
-      challenge:
-        wordcount: debug
+    com.challenge.wordcount: info
